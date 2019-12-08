@@ -68,7 +68,7 @@ namespace CapaPresentacion
                 ////ddlCategoria = dgvDatos.CurrentRow.Cells["ColumnDireccion"].Value.ToString();
                 //TraerPorId(Convert.ToInt32(TxtId.Text));
 
-                ventas.Show();
+               
                  Close();
 
 

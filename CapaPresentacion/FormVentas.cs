@@ -29,22 +29,20 @@ namespace CapaPresentacion
             TxtFecha.Text = Convert.ToString(DateTime.Today);
         }
 
-        private void BrnAprod_Click(object sender, EventArgs e)
+        
+
+        private void TxtFecha_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void BrnAprod_Click_1(object sender, EventArgs e)
         {
             GredProductos nuevo = new GredProductos();
 
             nuevo.Show();
             //GredProductos.Select();
-            
-            GredP.Select();
 
-
-           
-        }
-
-        private void TxtFecha_TextChanged(object sender, EventArgs e)
-        {
-            
         }
     }
 }
