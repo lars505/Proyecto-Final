@@ -33,7 +33,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.ddlCliente = new System.Windows.Forms.ComboBox();
             this.TxtId = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LblFecha = new System.Windows.Forms.Label();
             this.BrnAprod = new System.Windows.Forms.Button();
             this.TxtFecha = new System.Windows.Forms.TextBox();
             this.TxtPrecio = new System.Windows.Forms.TextBox();
@@ -82,7 +82,7 @@
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.ddlCliente);
             this.groupBox1.Controls.Add(this.TxtId);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.LblFecha);
             this.groupBox1.Controls.Add(this.BrnAprod);
             this.groupBox1.Controls.Add(this.TxtFecha);
             this.groupBox1.Controls.Add(this.TxtPrecio);
@@ -144,14 +144,14 @@
             this.TxtId.TabIndex = 40;
             this.TxtId.Visible = false;
             // 
-            // label1
+            // LblFecha
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Fecha :";
+            this.LblFecha.AutoSize = true;
+            this.LblFecha.Location = new System.Drawing.Point(25, 34);
+            this.LblFecha.Name = "LblFecha";
+            this.LblFecha.Size = new System.Drawing.Size(43, 13);
+            this.LblFecha.TabIndex = 21;
+            this.LblFecha.Text = "Fecha :";
             // 
             // BrnAprod
             // 
@@ -256,6 +256,7 @@
             // TxtProducto
             // 
             this.TxtProducto.AcceptsReturn = true;
+            this.TxtProducto.AllowDrop = true;
             this.TxtProducto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.TxtProducto.Location = new System.Drawing.Point(94, 110);
             this.TxtProducto.Name = "TxtProducto";
@@ -314,6 +315,7 @@
             this.ColumnTotal});
             this.dgvDatos.Location = new System.Drawing.Point(12, 259);
             this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.RowHeadersVisible = false;
             this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDatos.Size = new System.Drawing.Size(743, 210);
             this.dgvDatos.TabIndex = 3;
@@ -356,6 +358,7 @@
             this.BtnAgregar.TabIndex = 4;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.UseVisualStyleBackColor = true;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // BtnGuardar
             // 
@@ -374,6 +377,7 @@
             this.BtnQuitar.TabIndex = 6;
             this.BtnQuitar.Text = "Quitar Producto";
             this.BtnQuitar.UseVisualStyleBackColor = true;
+            this.BtnQuitar.Click += new System.EventHandler(this.BtnQuitar_Click);
             // 
             // BtnCerrar
             // 
@@ -383,6 +387,7 @@
             this.BtnCerrar.TabIndex = 7;
             this.BtnCerrar.Text = "Cerrar";
             this.BtnCerrar.UseVisualStyleBackColor = true;
+            this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
             // BtnCancelar
             // 
@@ -481,7 +486,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(767, 641);
+            this.ClientSize = new System.Drawing.Size(767, 660);
             this.Controls.Add(this.LblTotal);
             this.Controls.Add(this.LblIva);
             this.Controls.Add(this.LblDescuento);
@@ -524,7 +529,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDescuento;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTotal;
         public System.Windows.Forms.TextBox TxtId;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LblFecha;
         private System.Windows.Forms.Button BrnAprod;
         private System.Windows.Forms.TextBox TxtFecha;
         public System.Windows.Forms.TextBox TxtPrecio;

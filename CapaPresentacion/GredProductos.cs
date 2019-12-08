@@ -31,6 +31,7 @@ namespace CapaPresentacion
         private void GredProductos_Load(object sender, EventArgs e)
         {
             TraerTodos();
+            
         }
 
         private void TraerTodos()
@@ -60,17 +61,13 @@ namespace CapaPresentacion
             if (dgvDatos.SelectedRows.Count > 0)
             {
                 FormVentas ventas = new FormVentas();
-
-                ventas.TxtId.Text = dgvDatos.CurrentRow.Cells["ColumnId"].Value.ToString();
-                ventas.TxtProducto.Text = dgvDatos.CurrentRow.Cells["columnProducto"].Value.ToString();
-                ventas.TxtExistencia.Text = dgvDatos.CurrentRow.Cells["columnExistencia"].Value.ToString();
-                ventas.TxtPrecio.Text = dgvDatos.CurrentRow.Cells["columnPrecioventa"].Value.ToString();
-                ////ddlCategoria = dgvDatos.CurrentRow.Cells["ColumnDireccion"].Value.ToString();
-                //TraerPorId(Convert.ToInt32(TxtId.Text));
                 
+                ventas.TxtId.Text = this.dgvDatos.CurrentRow.Cells["ColumnId"].ToString();
+                ventas.TxtProducto.Text = this.dgvDatos.CurrentRow.Cells["columnProducto"].ToString();
+                ventas.TxtExistencia.Text = this.dgvDatos.CurrentRow.Cells["columnExistencia"].Value.ToString();
+                ventas.TxtPrecio.Text = this.dgvDatos.CurrentRow.Cells["columnPrecioventa"].Value.ToString();    
                  Close();
-
-
+                
             }
             else
             {

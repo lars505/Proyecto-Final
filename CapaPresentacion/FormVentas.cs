@@ -15,9 +15,12 @@ namespace CapaPresentacion
 {
     public partial class FormVentas : Form
     {
-        private CE_Ventas _ventas;
+       
         private readonly CN_Ventas CNVenta = new CN_Ventas();
         private readonly CN_Vendedor CNvendedor = new CN_Vendedor();
+        
+
+
 
 
         public FormVentas()
@@ -27,12 +30,11 @@ namespace CapaPresentacion
 
         private void FormVentas_Load(object sender, EventArgs e)
         {
-            TxtFecha.Text = Convert.ToString(DateTime.Today);
+            LblFecha.Text = Convert.ToString(Convert.ToDateTime( DateTime.Today));
             LLenarComboVendedor();
             
+            
         }
-
-        
 
         private void TxtFecha_TextChanged(object sender, EventArgs e)
         {
@@ -64,7 +66,28 @@ namespace CapaPresentacion
         }
 
 
+        private void BtnAgregar_Click(object sender, EventArgs e)
+        {
+            dgvDatos.Rows.Add(TxtId.Text,TxtProducto.Text, TxtPrecio.Text, TxtCantidad.Text, TxtDescuento.Text, TxtTotal.Text).ToString();
+                
+        }
 
+
+        private void BtnQuitar_Click(object sender, EventArgs e)
+        {
+            if (dgvDatos.SelectedRows.Count > 0)
+            {
+
+            }
+            else
+            {
+             MessageBox.Show("Seleccione el Proveedor a Eliminar");
+            }
+        }
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
 
 
@@ -128,5 +151,7 @@ namespace CapaPresentacion
         {
 
         }
+
+        
     }
 }
