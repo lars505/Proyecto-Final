@@ -109,6 +109,7 @@
             this.dgvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDatos.Location = new System.Drawing.Point(3, 16);
             this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDatos.Size = new System.Drawing.Size(557, 223);
             this.dgvDatos.TabIndex = 6;
             // 

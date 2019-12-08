@@ -67,8 +67,7 @@ namespace CapaPresentacion
                 ventas.TxtPrecio.Text = dgvDatos.CurrentRow.Cells["columnPrecioventa"].Value.ToString();
                 ////ddlCategoria = dgvDatos.CurrentRow.Cells["ColumnDireccion"].Value.ToString();
                 //TraerPorId(Convert.ToInt32(TxtId.Text));
-
-               
+                
                  Close();
 
 

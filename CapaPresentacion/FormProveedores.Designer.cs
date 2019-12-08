@@ -201,6 +201,7 @@
             this.dgvDatos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dgvDatos.Location = new System.Drawing.Point(3, 16);
             this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDatos.Size = new System.Drawing.Size(654, 261);
             this.dgvDatos.TabIndex = 15;
             // 

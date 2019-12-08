@@ -129,6 +129,7 @@
             this.ddlCategoria.Name = "ddlCategoria";
             this.ddlCategoria.Size = new System.Drawing.Size(121, 21);
             this.ddlCategoria.TabIndex = 10;
+            this.ddlCategoria.SelectedIndexChanged += new System.EventHandler(this.ddlCategoria_SelectedIndexChanged);
             // 
             // CkEstado
             // 
@@ -176,6 +177,7 @@
             this.ColumnIdcategoria});
             this.dgvDatos.Location = new System.Drawing.Point(15, 221);
             this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDatos.Size = new System.Drawing.Size(710, 268);
             this.dgvDatos.TabIndex = 14;
             // 

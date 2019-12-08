@@ -419,5 +419,10 @@ namespace CapaPresentacion
             BtnAgreagr.Enabled = false;
             BtnCancelar.Enabled = false;
         }
+
+        private void ddlCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

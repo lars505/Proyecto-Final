@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.dgvDatos = new System.Windows.Forms.DataGridView();
-            this.TxtBuscar = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.BtnAgregar = new System.Windows.Forms.Button();
             this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnExistencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPrecioventa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TxtBuscar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.BtnAgregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,8 +50,29 @@
             this.ColumnPrecioventa});
             this.dgvDatos.Location = new System.Drawing.Point(12, 57);
             this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDatos.Size = new System.Drawing.Size(318, 242);
             this.dgvDatos.TabIndex = 0;
+            // 
+            // ColumnId
+            // 
+            this.ColumnId.HeaderText = "Codigo";
+            this.ColumnId.Name = "ColumnId";
+            // 
+            // ColumnProducto
+            // 
+            this.ColumnProducto.HeaderText = "Producto";
+            this.ColumnProducto.Name = "ColumnProducto";
+            // 
+            // ColumnExistencia
+            // 
+            this.ColumnExistencia.HeaderText = "Existencia";
+            this.ColumnExistencia.Name = "ColumnExistencia";
+            // 
+            // ColumnPrecioventa
+            // 
+            this.ColumnPrecioventa.HeaderText = "PrecioVenta";
+            this.ColumnPrecioventa.Name = "ColumnPrecioventa";
             // 
             // TxtBuscar
             // 
@@ -80,26 +101,6 @@
             this.BtnAgregar.UseVisualStyleBackColor = true;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
-            // ColumnId
-            // 
-            this.ColumnId.HeaderText = "Codigo";
-            this.ColumnId.Name = "ColumnId";
-            // 
-            // ColumnProducto
-            // 
-            this.ColumnProducto.HeaderText = "Producto";
-            this.ColumnProducto.Name = "ColumnProducto";
-            // 
-            // ColumnExistencia
-            // 
-            this.ColumnExistencia.HeaderText = "Existencia";
-            this.ColumnExistencia.Name = "ColumnExistencia";
-            // 
-            // ColumnPrecioventa
-            // 
-            this.ColumnPrecioventa.HeaderText = "PrecioVenta";
-            this.ColumnPrecioventa.Name = "ColumnPrecioventa";
-            // 
             // GredProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -110,6 +111,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvDatos);
             this.Name = "GredProductos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GredProductos";
             this.Load += new System.EventHandler(this.GredProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
@@ -119,8 +121,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvDatos;
         private System.Windows.Forms.TextBox TxtBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnAgregar;
@@ -128,5 +128,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnExistencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPrecioventa;
+        public System.Windows.Forms.DataGridView dgvDatos;
     }
 }
