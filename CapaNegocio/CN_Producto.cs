@@ -17,6 +17,26 @@ namespace CapaNegocio
         //El uso de la clase StringBuilder nos ayudara a devolver los mensajes de las validaciones
         public readonly StringBuilder stringBuilder = new StringBuilder();
 
+        public static bool sForprin1;
+        public bool FormOneInstancia(System.Windows.Forms.Form Xformular, string xnombre)
+        {
+            bool retorn = false;
+
+            for (int f = 0; f < Xformular.MdiChildren.Length; f++)
+            {
+                if (Xformular.MdiChildren[f].Text == xnombre)
+                {
+                    Xformular.MdiChildren[f].Activate();
+                    Xformular.MdiChildren[f].WindowState = System.Windows.Forms.FormWindowState.Normal;
+                    retorn = true;
+                }
+
+            }
+
+            return retorn;
+        }
+
+
         //
         //Creamos nuestro método para Insertar un nuevo Producto, observe como este método tampoco valida los el contenido
         //de las propiedades, sino que manda a llamar a una Función que tiene como tarea única hacer esta validación
@@ -79,7 +99,7 @@ namespace CapaNegocio
             return stringBuilder.Length == 0;
         }
 
-
+        
 
 
 

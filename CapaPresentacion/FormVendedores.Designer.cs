@@ -160,6 +160,9 @@
             // dgvDatos
             // 
             this.dgvDatos.AllowUserToAddRows = false;
+            this.dgvDatos.AllowUserToDeleteRows = false;
+            this.dgvDatos.AllowUserToResizeColumns = false;
+            this.dgvDatos.AllowUserToResizeRows = false;
             this.dgvDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -173,6 +176,7 @@
             this.dgvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDatos.Location = new System.Drawing.Point(3, 16);
             this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.ReadOnly = true;
             this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDatos.Size = new System.Drawing.Size(763, 280);
             this.dgvDatos.TabIndex = 12;
@@ -181,36 +185,43 @@
             // 
             this.ColumnId.HeaderText = "ID";
             this.ColumnId.Name = "ColumnId";
+            this.ColumnId.ReadOnly = true;
             // 
             // ColumnNombre
             // 
             this.ColumnNombre.HeaderText = "Nombre";
             this.ColumnNombre.Name = "ColumnNombre";
+            this.ColumnNombre.ReadOnly = true;
             // 
             // ColumnAP
             // 
             this.ColumnAP.HeaderText = "Apellido Paterno";
             this.ColumnAP.Name = "ColumnAP";
+            this.ColumnAP.ReadOnly = true;
             // 
             // ColumnAM
             // 
             this.ColumnAM.HeaderText = "Apellido Materno";
             this.ColumnAM.Name = "ColumnAM";
+            this.ColumnAM.ReadOnly = true;
             // 
             // ColumnEmail
             // 
             this.ColumnEmail.HeaderText = "Email";
             this.ColumnEmail.Name = "ColumnEmail";
+            this.ColumnEmail.ReadOnly = true;
             // 
             // ColumnDireccion
             // 
             this.ColumnDireccion.HeaderText = "Direccion";
             this.ColumnDireccion.Name = "ColumnDireccion";
+            this.ColumnDireccion.ReadOnly = true;
             // 
             // ColumnTelefono
             // 
             this.ColumnTelefono.HeaderText = "Telefono";
             this.ColumnTelefono.Name = "ColumnTelefono";
+            this.ColumnTelefono.ReadOnly = true;
             // 
             // BtnAgregar
             // 
@@ -287,6 +298,7 @@
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // groupBox3
             // 

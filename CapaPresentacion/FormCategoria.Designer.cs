@@ -53,11 +53,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 19);
+            this.label1.Location = new System.Drawing.Point(61, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(15, 13);
+            this.label1.Size = new System.Drawing.Size(24, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "id";
+            this.label1.Text = "ID :";
             // 
             // txtid
             // 
@@ -76,7 +76,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 59);
+            this.label2.Location = new System.Drawing.Point(35, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 2;
@@ -100,6 +100,10 @@
             // 
             // dgvDatos
             // 
+            this.dgvDatos.AllowUserToAddRows = false;
+            this.dgvDatos.AllowUserToDeleteRows = false;
+            this.dgvDatos.AllowUserToResizeColumns = false;
+            this.dgvDatos.AllowUserToResizeRows = false;
             this.dgvDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -109,6 +113,8 @@
             this.dgvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDatos.Location = new System.Drawing.Point(3, 16);
             this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.ReadOnly = true;
+            this.dgvDatos.RowHeadersVisible = false;
             this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDatos.Size = new System.Drawing.Size(557, 223);
             this.dgvDatos.TabIndex = 6;
@@ -117,16 +123,19 @@
             // 
             this.ColumnId.HeaderText = "ID";
             this.ColumnId.Name = "ColumnId";
+            this.ColumnId.ReadOnly = true;
             // 
             // ColumnNombre
             // 
             this.ColumnNombre.HeaderText = "Nombre";
             this.ColumnNombre.Name = "ColumnNombre";
+            this.ColumnNombre.ReadOnly = true;
             // 
             // ColumnDescripcion
             // 
             this.ColumnDescripcion.HeaderText = "Descripcion";
             this.ColumnDescripcion.Name = "ColumnDescripcion";
+            this.ColumnDescripcion.ReadOnly = true;
             // 
             // BtnAgregar
             // 
@@ -144,7 +153,7 @@
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(75, 27);
             this.BtnBuscar.TabIndex = 8;
-            this.BtnBuscar.Text = "Buscar";
+            this.BtnBuscar.Text = "Editar";
             this.BtnBuscar.UseVisualStyleBackColor = true;
             this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
@@ -191,6 +200,7 @@
             this.BtnCancelar.TabIndex = 24;
             this.BtnCancelar.Text = "cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = true;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // groupBox3
             // 

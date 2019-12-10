@@ -51,7 +51,7 @@
             this.ColumnDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCiudad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Btnnuevo = new System.Windows.Forms.Button();
-            this.txtcancelar = new System.Windows.Forms.Button();
+            this.Btncancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
@@ -171,7 +171,7 @@
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(75, 28);
             this.BtnEditar.TabIndex = 13;
-            this.BtnEditar.Text = "Buscar";
+            this.BtnEditar.Text = "Editar";
             this.BtnEditar.UseVisualStyleBackColor = true;
             this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
@@ -188,6 +188,9 @@
             // dgvDatos
             // 
             this.dgvDatos.AllowUserToAddRows = false;
+            this.dgvDatos.AllowUserToDeleteRows = false;
+            this.dgvDatos.AllowUserToResizeColumns = false;
+            this.dgvDatos.AllowUserToResizeRows = false;
             this.dgvDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -201,6 +204,7 @@
             this.dgvDatos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dgvDatos.Location = new System.Drawing.Point(3, 16);
             this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.ReadOnly = true;
             this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDatos.Size = new System.Drawing.Size(654, 261);
             this.dgvDatos.TabIndex = 15;
@@ -209,31 +213,37 @@
             // 
             this.ColumnId.HeaderText = "ID";
             this.ColumnId.Name = "ColumnId";
+            this.ColumnId.ReadOnly = true;
             // 
             // ColumnNombre
             // 
             this.ColumnNombre.HeaderText = "Nombre";
             this.ColumnNombre.Name = "ColumnNombre";
+            this.ColumnNombre.ReadOnly = true;
             // 
             // ColumnEmail
             // 
             this.ColumnEmail.HeaderText = "Email";
             this.ColumnEmail.Name = "ColumnEmail";
+            this.ColumnEmail.ReadOnly = true;
             // 
             // ColumnTelefono
             // 
             this.ColumnTelefono.HeaderText = "Telefono";
             this.ColumnTelefono.Name = "ColumnTelefono";
+            this.ColumnTelefono.ReadOnly = true;
             // 
             // ColumnDireccion
             // 
             this.ColumnDireccion.HeaderText = "Direccion";
             this.ColumnDireccion.Name = "ColumnDireccion";
+            this.ColumnDireccion.ReadOnly = true;
             // 
             // ColumnCiudad
             // 
             this.ColumnCiudad.HeaderText = "Ciudad";
             this.ColumnCiudad.Name = "ColumnCiudad";
+            this.ColumnCiudad.ReadOnly = true;
             // 
             // Btnnuevo
             // 
@@ -245,15 +255,15 @@
             this.Btnnuevo.UseVisualStyleBackColor = true;
             this.Btnnuevo.Click += new System.EventHandler(this.Btnnuevo_Click);
             // 
-            // txtcancelar
+            // Btncancelar
             // 
-            this.txtcancelar.Location = new System.Drawing.Point(357, 183);
-            this.txtcancelar.Name = "txtcancelar";
-            this.txtcancelar.Size = new System.Drawing.Size(75, 28);
-            this.txtcancelar.TabIndex = 17;
-            this.txtcancelar.Text = "Cancelar";
-            this.txtcancelar.UseVisualStyleBackColor = true;
-            this.txtcancelar.Click += new System.EventHandler(this.txtcancelar_Click);
+            this.Btncancelar.Location = new System.Drawing.Point(357, 183);
+            this.Btncancelar.Name = "Btncancelar";
+            this.Btncancelar.Size = new System.Drawing.Size(75, 28);
+            this.Btncancelar.TabIndex = 17;
+            this.Btncancelar.Text = "Cancelar";
+            this.Btncancelar.UseVisualStyleBackColor = true;
+            this.Btncancelar.Click += new System.EventHandler(this.txtcancelar_Click);
             // 
             // groupBox1
             // 
@@ -282,7 +292,7 @@
             this.ClientSize = new System.Drawing.Size(1144, 330);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnAgregar);
-            this.Controls.Add(this.txtcancelar);
+            this.Controls.Add(this.Btncancelar);
             this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.Btnnuevo);
             this.Controls.Add(this.txtciudad);
@@ -335,7 +345,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDireccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCiudad;
         private System.Windows.Forms.Button Btnnuevo;
-        private System.Windows.Forms.Button txtcancelar;
+        private System.Windows.Forms.Button Btncancelar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
     }

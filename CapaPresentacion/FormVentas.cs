@@ -78,7 +78,9 @@ namespace CapaPresentacion
             int num_fila = 0;
 
             LblDescuento.Text = TxtDescuento.Text.ToString() + "%";
-            LblTotal.Text = Convert.ToString((Convert.ToDouble(LblTotalneto.Text) - Convert.ToDouble(LblDescuento.Text)) * Convert.ToDouble(LblIva.Text));
+            //LblTotal.Text = (totalneto * ( Convert.ToDouble(TxtDescuento.Text) /100)).ToString();
+
+            //LblTotal.Text = Convert.ToString((Convert.ToDouble(LblTotalneto.Text) - Convert.ToDouble(LblDescuento.Text)) * Convert.ToDouble(LblIva.Text));
 
             if (cont_fila == 0)
             {

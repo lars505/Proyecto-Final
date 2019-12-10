@@ -253,10 +253,11 @@ namespace CapaPresentacion
             CkEstado.Enabled = false;
             ddlCategoria.Enabled = false;
             ddlProveedor.Enabled = false;
-
+            
             BtnEliminar.Enabled = true;
             BtnAgreagr.Enabled = false;
             BtnCancelar.Enabled = false;
+            BtnNuevo.Focus();
         }
 
         private void BtnAgreagr_Click(object sender, EventArgs e)
@@ -305,15 +306,17 @@ namespace CapaPresentacion
                 TxtDescripcion.Text = dgvDatos.CurrentRow.Cells["columnDescripcion"].Value.ToString();
                 //ddlCategoria = dgvDatos.CurrentRow.Cells["ColumnDireccion"].Value.ToString();
                 TraerPorId(Convert.ToInt32(TxtId.Text));
-
+                
                 TxtNombreProducto.ReadOnly = false;
                 TxtDescripcion.ReadOnly = false;
                 ddlCategoria.Enabled = true;
                 ddlProveedor.Enabled = true;
                 BtnAgreagr.Enabled = true;
                 CkEstado.Enabled = true;
-                TxtId.ReadOnly = false;
+                TxtId.ReadOnly = true;
 
+                BtnEliminar.Enabled = false;
+                BtnCancelar.Enabled = true;
             }
             else
             {
@@ -418,6 +421,7 @@ namespace CapaPresentacion
             BtnEliminar.Enabled = true;
             BtnAgreagr.Enabled = false;
             BtnCancelar.Enabled = false;
+            BtnNuevo.Focus();
         }
 
         private void ddlCategoria_SelectedIndexChanged(object sender, EventArgs e)

@@ -291,5 +291,10 @@ namespace CapaPresentacion
             TxtDireccion.ReadOnly = false;
            
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

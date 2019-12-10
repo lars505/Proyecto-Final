@@ -41,6 +41,10 @@
             // 
             // dgvDatos
             // 
+            this.dgvDatos.AllowUserToAddRows = false;
+            this.dgvDatos.AllowUserToDeleteRows = false;
+            this.dgvDatos.AllowUserToResizeColumns = false;
+            this.dgvDatos.AllowUserToResizeRows = false;
             this.dgvDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -50,6 +54,7 @@
             this.ColumnPrecioventa});
             this.dgvDatos.Location = new System.Drawing.Point(12, 57);
             this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.ReadOnly = true;
             this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDatos.Size = new System.Drawing.Size(318, 242);
             this.dgvDatos.TabIndex = 0;
@@ -58,21 +63,25 @@
             // 
             this.ColumnId.HeaderText = "Codigo";
             this.ColumnId.Name = "ColumnId";
+            this.ColumnId.ReadOnly = true;
             // 
             // ColumnProducto
             // 
             this.ColumnProducto.HeaderText = "Producto";
             this.ColumnProducto.Name = "ColumnProducto";
+            this.ColumnProducto.ReadOnly = true;
             // 
             // ColumnExistencia
             // 
             this.ColumnExistencia.HeaderText = "Existencia";
             this.ColumnExistencia.Name = "ColumnExistencia";
+            this.ColumnExistencia.ReadOnly = true;
             // 
             // ColumnPrecioventa
             // 
             this.ColumnPrecioventa.HeaderText = "PrecioVenta";
             this.ColumnPrecioventa.Name = "ColumnPrecioventa";
+            this.ColumnPrecioventa.ReadOnly = true;
             // 
             // TxtBuscar
             // 

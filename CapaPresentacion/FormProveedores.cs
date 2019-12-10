@@ -181,12 +181,16 @@ namespace CapaPresentacion
         {
 
             TraerTodos();
+            Btnnuevo.Focus();
             txtid.ReadOnly= true;
-            txtnombre.ReadOnly = false;
+            txtnombre.ReadOnly = true;
             txttelefono.ReadOnly = true;
             txtemail.ReadOnly = true;
             txtdireccion.ReadOnly = true;
             txtciudad.ReadOnly = true;
+
+            BtnAgregar.Enabled = false;
+            Btncancelar.Enabled = false;
 
         }
 
@@ -201,6 +205,18 @@ namespace CapaPresentacion
             txtemail.Clear();
             txtdireccion.Clear();
             txtciudad.Clear();
+            txtid.ReadOnly = true;
+            txtnombre.ReadOnly = true;
+            txtemail.ReadOnly = true;
+            txttelefono.ReadOnly = true;
+            txtdireccion.ReadOnly = true;
+            txtciudad.ReadOnly = true;
+
+            BtnAgregar.Enabled = false;
+            Btncancelar.Enabled = false;
+            Btnnuevo.Enabled = true;
+            BtnEditar.Enabled = true;
+            Btnnuevo.Focus();
         }
 
         private void txtid_KeyDown(object sender, KeyEventArgs e)
@@ -237,21 +253,24 @@ namespace CapaPresentacion
 
             }
 
-            if (!string.IsNullOrWhiteSpace(txtid.Text))
-            {
-                TraerPorId(Convert.ToInt32(txtid.Text));
-            }
+            //if (!string.IsNullOrWhiteSpace(txtid.Text))
+            //{
+            //    TraerPorId(Convert.ToInt32(txtid.Text));
+            //}
 
-            //txtid.Clear();
-            //txtnombre.Clear();
-            //txttelefono.Clear();
-            //txtemail.Clear();
-            //txtdireccion.Clear();
-            //txtciudad.Clear();
-            txtid.Enabled = true;
-            txtnombre.Enabled = true;
-            txtid.ReadOnly = false;
             
+            txtid.ReadOnly = true;
+            txtnombre.ReadOnly = false;
+            txtemail.ReadOnly = false;
+            txttelefono.ReadOnly = false;
+            txtdireccion.ReadOnly = false;
+            txtciudad.ReadOnly = false;
+
+            BtnEditar.Enabled = false;
+            Btnnuevo.Enabled = false;
+            Btncancelar.Enabled = true;
+            BtnAgregar.Enabled = true;
+
 
         }
 
@@ -260,9 +279,10 @@ namespace CapaPresentacion
 
             if (dgvDatos.SelectedRows.Count > 0)
             {
-                txtid.Text = dgvDatos.CurrentRow.Cells["ColumnId"].Value.ToString();
+                string id;
+                id = dgvDatos.CurrentRow.Cells["ColumnId"].Value.ToString();
                 
-                Eliminar(Convert.ToInt32(txtid.Text));
+                Eliminar(Convert.ToInt32(id));
                 MessageBox.Show("Eliminado Correctamente");
                 TraerTodos();
             }
@@ -272,7 +292,7 @@ namespace CapaPresentacion
 
             }
 
-
+            Btnnuevo.Focus();
 
             //if (!string.IsNullOrWhiteSpace(txtid.Text))
             //{
@@ -288,6 +308,11 @@ namespace CapaPresentacion
             txtemail.ReadOnly = false;
             txtdireccion.ReadOnly = false;
             txtciudad.ReadOnly = false;
+
+            BtnEditar.Enabled = false;
+            Btncancelar.Enabled = true;
+            BtnAgregar.Enabled = true;
+            Btnnuevo.Enabled = false;
         }
 
         private void txtcancelar_Click(object sender, EventArgs e)
@@ -305,6 +330,12 @@ namespace CapaPresentacion
             txtemail.ReadOnly = true;
             txtdireccion.ReadOnly = true;
             txtciudad.ReadOnly = true;
+
+            Btncancelar.Enabled = false;
+            BtnAgregar.Enabled = false;
+            Btnnuevo.Enabled = true;
+            BtnEditar.Enabled = true;
+            Btnnuevo.Focus();
 
         }
 

@@ -8,11 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using CapaNegocio;
 namespace CapaPresentacion
 {
     public partial class MDI : Form
     {
-     
+        CN_Producto llamarfun = new CN_Producto();
+        CN_Categoria categoria = new CN_Categoria();
+        CN_Proveedor proveedor = new CN_Proveedor();
+        CN_Vendedor vendedor = new CN_Vendedor();
+
         public MDI()
         {
             InitializeComponent();
@@ -25,31 +30,62 @@ namespace CapaPresentacion
 
         private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormCategoria nuevo = new FormCategoria();
-            nuevo.MdiParent = this;
-            nuevo.Show();
+            //FormCategoria nuevo = new FormCategoria();
+            
+            //if (categoria.FormOneInstancia(this, "Categorias"))
+            //{
+            //    return;
+            //}
+            FormCategoria fcategoria = new FormCategoria();
+            fcategoria.MdiParent = this;
+            //fcategoria.Text = "Categorias";
+            fcategoria.Show();
+           
         }
 
         private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormProveedores nuevo = new FormProveedores();
-            nuevo.MdiParent = this;
-            nuevo.Show();
+            
+            //if (FormOneInstancia(this, "Proveedores"))
+            //{
+            //    return;
+            //}
+            FormProveedores fproveedores = new FormProveedores();
+            fproveedores.MdiParent = this;
+            //fproveedores.Text = "Proveedores";
+            fproveedores.Show();
         }
 
         private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormVendedores nuevo = new FormVendedores();
+            //if (llamarfun.FormOneInstancia(this, "Usuarios"))
+            //{
+            //    return;
+            //}
+
             nuevo.MdiParent = this;
+            //nuevo.Text = "Usuarios";
             nuevo.Show();
         }
 
         private void productosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormProductos nuevo = new FormProductos();
-            nuevo.MdiParent = this;
-            nuevo.Show();
             
+            //nuevo.MdiParent = this;
+            //nuevo.Show();
+            
+            
+            
+            if (llamarfun.FormOneInstancia(this,"Productos"))
+            {
+                return;
+            }
+            FormProductos fproductos = new FormProductos();
+            fproductos.MdiParent = this;
+            fproductos.Text = "Productos";
+            fproductos.Show();
+
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -68,5 +104,9 @@ namespace CapaPresentacion
             nuevo.MdiParent = this;
             nuevo.Show();
         }
+
+        
+
+
     }
 }
