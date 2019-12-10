@@ -128,6 +128,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnExistencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPrecioventa;
-        public System.Windows.Forms.DataGridView dgvDatos;
+        private System.Windows.Forms.DataGridView dgvDatos;
     }
 }

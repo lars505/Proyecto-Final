@@ -63,9 +63,10 @@ namespace CapaPresentacion
                 FormVentas ventas = new FormVentas();
                 
                 ventas.TxtId.Text = this.dgvDatos.CurrentRow.Cells["ColumnId"].ToString();
-                ventas.TxtProducto.Text = this.dgvDatos.CurrentRow.Cells["columnProducto"].ToString();
+                ventas.TxtProducto.Text = this.dgvDatos.CurrentRow.Cells["columnProducto"].Value.ToString();
                 ventas.TxtExistencia.Text = this.dgvDatos.CurrentRow.Cells["columnExistencia"].Value.ToString();
-                ventas.TxtPrecio.Text = this.dgvDatos.CurrentRow.Cells["columnPrecioventa"].Value.ToString();    
+                ventas.TxtPrecio.Text = this.dgvDatos.CurrentRow.Cells["columnPrecioventa"].Value.ToString();
+                ventas.Show();
                  Close();
                 
             }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ddlVendedor = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -142,7 +143,6 @@
             this.TxtId.Name = "TxtId";
             this.TxtId.Size = new System.Drawing.Size(126, 20);
             this.TxtId.TabIndex = 40;
-            this.TxtId.Visible = false;
             // 
             // LblFecha
             // 
@@ -304,6 +304,10 @@
             // 
             // dgvDatos
             // 
+            this.dgvDatos.AllowUserToAddRows = false;
+            this.dgvDatos.AllowUserToDeleteRows = false;
+            this.dgvDatos.AllowUserToResizeColumns = false;
+            this.dgvDatos.AllowUserToResizeRows = false;
             this.dgvDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -315,7 +319,10 @@
             this.ColumnTotal});
             this.dgvDatos.Location = new System.Drawing.Point(12, 259);
             this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersVisible = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvDatos.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDatos.Size = new System.Drawing.Size(743, 210);
             this.dgvDatos.TabIndex = 3;
@@ -324,31 +331,37 @@
             // 
             this.ColumnCodigo.HeaderText = "Codigo";
             this.ColumnCodigo.Name = "ColumnCodigo";
+            this.ColumnCodigo.ReadOnly = true;
             // 
             // ColumnProducto
             // 
             this.ColumnProducto.HeaderText = "Producto";
             this.ColumnProducto.Name = "ColumnProducto";
+            this.ColumnProducto.ReadOnly = true;
             // 
             // ColumnPrecioU
             // 
             this.ColumnPrecioU.HeaderText = "Precio Unitario";
             this.ColumnPrecioU.Name = "ColumnPrecioU";
+            this.ColumnPrecioU.ReadOnly = true;
             // 
             // ColumnCantidad
             // 
             this.ColumnCantidad.HeaderText = "Cantidad";
             this.ColumnCantidad.Name = "ColumnCantidad";
+            this.ColumnCantidad.ReadOnly = true;
             // 
             // ColumnDescuento
             // 
             this.ColumnDescuento.HeaderText = "Descuento";
             this.ColumnDescuento.Name = "ColumnDescuento";
+            this.ColumnDescuento.ReadOnly = true;
             // 
             // ColumnTotal
             // 
             this.ColumnTotal.HeaderText = "Total";
             this.ColumnTotal.Name = "ColumnTotal";
+            this.ColumnTotal.ReadOnly = true;
             // 
             // BtnAgregar
             // 
@@ -422,7 +435,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(597, 561);
+            this.label12.Location = new System.Drawing.Point(642, 561);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(37, 17);
             this.label12.TabIndex = 25;
@@ -432,7 +445,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.Location = new System.Drawing.Point(597, 595);
+            this.label13.Location = new System.Drawing.Point(631, 595);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(48, 17);
             this.label13.TabIndex = 26;
@@ -443,7 +456,7 @@
             this.LblTotalneto.AutoSize = true;
             this.LblTotalneto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LblTotalneto.ForeColor = System.Drawing.Color.MediumAquamarine;
-            this.LblTotalneto.Location = new System.Drawing.Point(714, 493);
+            this.LblTotalneto.Location = new System.Drawing.Point(696, 493);
             this.LblTotalneto.Name = "LblTotalneto";
             this.LblTotalneto.Size = new System.Drawing.Size(36, 17);
             this.LblTotalneto.TabIndex = 27;
@@ -454,7 +467,7 @@
             this.LblDescuento.AutoSize = true;
             this.LblDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LblDescuento.ForeColor = System.Drawing.Color.MediumAquamarine;
-            this.LblDescuento.Location = new System.Drawing.Point(714, 527);
+            this.LblDescuento.Location = new System.Drawing.Point(696, 527);
             this.LblDescuento.Name = "LblDescuento";
             this.LblDescuento.Size = new System.Drawing.Size(36, 17);
             this.LblDescuento.TabIndex = 28;
@@ -465,7 +478,7 @@
             this.LblIva.AutoSize = true;
             this.LblIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LblIva.ForeColor = System.Drawing.Color.MediumAquamarine;
-            this.LblIva.Location = new System.Drawing.Point(714, 561);
+            this.LblIva.Location = new System.Drawing.Point(696, 561);
             this.LblIva.Name = "LblIva";
             this.LblIva.Size = new System.Drawing.Size(36, 17);
             this.LblIva.TabIndex = 29;
@@ -476,7 +489,7 @@
             this.LblTotal.AutoSize = true;
             this.LblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LblTotal.ForeColor = System.Drawing.Color.MediumAquamarine;
-            this.LblTotal.Location = new System.Drawing.Point(714, 595);
+            this.LblTotal.Location = new System.Drawing.Point(696, 595);
             this.LblTotal.Name = "LblTotal";
             this.LblTotal.Size = new System.Drawing.Size(36, 17);
             this.LblTotal.TabIndex = 30;

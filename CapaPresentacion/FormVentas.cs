@@ -19,6 +19,7 @@ namespace CapaPresentacion
         private readonly CN_Ventas CNVenta = new CN_Ventas();
         private readonly CN_Vendedor CNvendedor = new CN_Vendedor();
         
+        
 
 
 
@@ -32,6 +33,7 @@ namespace CapaPresentacion
         {
             LblFecha.Text = Convert.ToString(Convert.ToDateTime( DateTime.Today));
             LLenarComboVendedor();
+
             
             
         }
@@ -66,18 +68,73 @@ namespace CapaPresentacion
         }
 
 
+        public static int cont_fila = 0;
+        public static double totalneto;
+
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            dgvDatos.Rows.Add(TxtId.Text,TxtProducto.Text, TxtPrecio.Text, TxtCantidad.Text, TxtDescuento.Text, TxtTotal.Text).ToString();
+            
+            bool existe = false;
+            int num_fila = 0;
+
+            LblDescuento.Text = TxtDescuento.Text.ToString() + "%";
+            LblTotal.Text = Convert.ToString((Convert.ToDouble(LblTotalneto.Text) - Convert.ToDouble(LblDescuento.Text)) * Convert.ToDouble(LblIva.Text));
+
+            if (cont_fila == 0)
+            {
+                dgvDatos.Rows.Add(TxtId.Text, TxtProducto.Text, TxtPrecio.Text, TxtCantidad.Text, TxtDescuento.Text);
+                double total = Convert.ToDouble(dgvDatos.Rows[cont_fila].Cells[2].Value) *  Convert.ToDouble(dgvDatos.Rows[cont_fila].Cells[3].Value);
+                dgvDatos.Rows[cont_fila].Cells[5].Value = total;
+                cont_fila++;
+            }
+            else
+            {
                 
+                foreach (DataGridViewRow fila in dgvDatos.Rows)
+                {
+                    if(fila.Cells[0].Value.ToString() == TxtId.Text)
+                    {
+                        existe = true;
+                        num_fila = fila.Index;
+                    }
+                }
+
+
+                if ( existe == true)
+                {
+                    dgvDatos.Rows[num_fila].Cells[3].Value = (Convert.ToDouble(TxtCantidad.Text) + Convert.ToDouble(dgvDatos.Rows[num_fila].Cells[3].Value)).ToString();
+                    double total = Convert.ToDouble(dgvDatos.Rows[num_fila].Cells[2].Value) * Convert.ToDouble(dgvDatos.Rows[num_fila].Cells[3].Value);
+                    dgvDatos.Rows[num_fila].Cells[5].Value = total;
+
+                }
+                else
+                {
+                    dgvDatos.Rows.Add(TxtId.Text, TxtProducto.Text, TxtPrecio.Text, TxtCantidad.Text, TxtDescuento.Text);
+                    double total = Convert.ToDouble(dgvDatos.Rows[cont_fila].Cells[2].Value) * Convert.ToDouble(dgvDatos.Rows[cont_fila].Cells[3].Value);
+                    dgvDatos.Rows[cont_fila].Cells[5].Value = total;
+                    cont_fila++;
+                }
+            }
+
+            totalneto = 0;
+            foreach (DataGridViewRow fila in dgvDatos.Rows)
+            {
+                totalneto += Convert.ToDouble(fila.Cells[5].Value);
+            }
+            LblTotalneto.Text = "C$" + totalneto.ToString();
+
+
         }
 
 
         private void BtnQuitar_Click(object sender, EventArgs e)
         {
-            if (dgvDatos.SelectedRows.Count > 0)
+            if (cont_fila > 0)
             {
-
+                totalneto = totalneto - (Convert.ToDouble(dgvDatos.Rows[dgvDatos.CurrentRow.Index].Cells[5].Value));
+                LblTotalneto.Text = "C$" + totalneto.ToString();
+                dgvDatos.Rows.RemoveAt(dgvDatos.CurrentRow.Index);
+                cont_fila--;
             }
             else
             {
