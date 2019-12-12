@@ -32,8 +32,9 @@ namespace CapaPresentacion
 
         private void FormVentas_Load(object sender, EventArgs e)
         {
-            LblFecha.Text = Convert.ToString(Convert.ToDateTime( DateTime.Today));
+            //LblFecha.Text = Convert.ToString(Convert.ToDateTime( DateTime.Today));
             LLenarComboVendedor();
+            TxtFecha.Text = DateTime.Now.Date.ToShortDateString();
 
             
             
@@ -86,11 +87,39 @@ namespace CapaPresentacion
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
+
+
+            if (TxtProducto.Text == "")
+                return;
+            else if(TxtCantidad.Text == "")
+            {
+                TxtCantidad.Focus();
+                return;
+            }
+            else if(TxtPrecio.Text == "")
+            {
+                TxtPrecio.Focus();
+                return;
+            }
+            else if(TxtDescuento.Text == "")
+                TxtDescuento.Text= "0";
             
+            if(Convert.ToInt32(TxtCantidad.Text)> Convert.ToInt32(TxtExistencia.Text))
+            {
+                MessageBox.Show("La cantidad exede a las Existencias");
+                TxtCantidad.Focus();
+                return;
+            }
+            else if (TxtCantidad.Text == "0")
+            {
+                TxtCantidad.Focus();
+                return;
+            }
+
             bool existe = false;
             int num_fila = 0;
 
-            LblDescuento.Text = TxtDescuento.Text.ToString() + "%";
+           
             //LblTotal.Text = (totalneto * ( Convert.ToDouble(TxtDescuento.Text) /100)).ToString();
 
             //LblTotal.Text = Convert.ToString((Convert.ToDouble(LblTotalneto.Text) - Convert.ToDouble(LblDescuento.Text)) * Convert.ToDouble(LblIva.Text));
@@ -98,7 +127,7 @@ namespace CapaPresentacion
             if (cont_fila == 0)
             {
                 dgvDatos.Rows.Add(TxtId.Text, TxtProducto.Text, TxtPrecio.Text, TxtCantidad.Text, TxtDescuento.Text);
-                double total = Convert.ToDouble(dgvDatos.Rows[cont_fila].Cells[2].Value) *  Convert.ToDouble(dgvDatos.Rows[cont_fila].Cells[3].Value);
+                double total = (Convert.ToDouble(dgvDatos.Rows[cont_fila].Cells[2].Value) *  Convert.ToDouble(dgvDatos.Rows[cont_fila].Cells[3].Value)) - Convert.ToDouble(dgvDatos.Rows[cont_fila].Cells[4].Value);
                 dgvDatos.Rows[cont_fila].Cells[5].Value = total;
                 cont_fila++;
             }
@@ -224,6 +253,11 @@ namespace CapaPresentacion
 
         }
 
-        
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // double Cambio = totalneto - Convert.ToInt32(TxtEfectivo.Text);
+
+            //TxtCambio.Text = Convert.ToString(Cambio);
+        }
     }
 }

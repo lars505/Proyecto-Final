@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ddlVendedor = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -66,13 +66,15 @@
             this.BtnCerrar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.LblTotalneto = new System.Windows.Forms.Label();
-            this.LblDescuento = new System.Windows.Forms.Label();
             this.LblIva = new System.Windows.Forms.Label();
             this.LblTotal = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.TxtEfectivo = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.TxtCambio = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
@@ -143,6 +145,7 @@
             this.TxtId.Name = "TxtId";
             this.TxtId.Size = new System.Drawing.Size(126, 20);
             this.TxtId.TabIndex = 40;
+            this.TxtId.Visible = false;
             // 
             // LblFecha
             // 
@@ -321,8 +324,8 @@
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersVisible = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvDatos.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvDatos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDatos.Size = new System.Drawing.Size(743, 210);
             this.dgvDatos.TabIndex = 3;
@@ -415,27 +418,17 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(597, 493);
+            this.label10.Location = new System.Drawing.Point(602, 493);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 17);
+            this.label10.Size = new System.Drawing.Size(77, 17);
             this.label10.TabIndex = 23;
-            this.label10.Text = "Total Neto :";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(597, 527);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(84, 17);
-            this.label11.TabIndex = 24;
-            this.label11.Text = "Descuento :";
+            this.label10.Text = "Sub Total :";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(642, 561);
+            this.label12.Location = new System.Drawing.Point(642, 522);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(37, 17);
             this.label12.TabIndex = 25;
@@ -445,7 +438,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.Location = new System.Drawing.Point(631, 595);
+            this.label13.Location = new System.Drawing.Point(631, 556);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(48, 17);
             this.label13.TabIndex = 26;
@@ -462,23 +455,12 @@
             this.LblTotalneto.TabIndex = 27;
             this.LblTotalneto.Text = "0.00";
             // 
-            // LblDescuento
-            // 
-            this.LblDescuento.AutoSize = true;
-            this.LblDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LblDescuento.ForeColor = System.Drawing.Color.MediumAquamarine;
-            this.LblDescuento.Location = new System.Drawing.Point(696, 527);
-            this.LblDescuento.Name = "LblDescuento";
-            this.LblDescuento.Size = new System.Drawing.Size(36, 17);
-            this.LblDescuento.TabIndex = 28;
-            this.LblDescuento.Text = "0.00";
-            // 
             // LblIva
             // 
             this.LblIva.AutoSize = true;
             this.LblIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LblIva.ForeColor = System.Drawing.Color.MediumAquamarine;
-            this.LblIva.Location = new System.Drawing.Point(696, 561);
+            this.LblIva.Location = new System.Drawing.Point(696, 522);
             this.LblIva.Name = "LblIva";
             this.LblIva.Size = new System.Drawing.Size(36, 17);
             this.LblIva.TabIndex = 29;
@@ -489,24 +471,62 @@
             this.LblTotal.AutoSize = true;
             this.LblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LblTotal.ForeColor = System.Drawing.Color.MediumAquamarine;
-            this.LblTotal.Location = new System.Drawing.Point(696, 595);
+            this.LblTotal.Location = new System.Drawing.Point(696, 556);
             this.LblTotal.Name = "LblTotal";
             this.LblTotal.Size = new System.Drawing.Size(36, 17);
             this.LblTotal.TabIndex = 30;
             this.LblTotal.Text = "0.00";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(361, 497);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "Efectivo :";
+            // 
+            // TxtEfectivo
+            // 
+            this.TxtEfectivo.AcceptsReturn = true;
+            this.TxtEfectivo.AllowDrop = true;
+            this.TxtEfectivo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.TxtEfectivo.Location = new System.Drawing.Point(430, 494);
+            this.TxtEfectivo.Name = "TxtEfectivo";
+            this.TxtEfectivo.Size = new System.Drawing.Size(73, 20);
+            this.TxtEfectivo.TabIndex = 45;
+            this.TxtEfectivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(361, 537);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(48, 13);
+            this.label15.TabIndex = 46;
+            this.label15.Text = "Cambio :";
+            // 
+            // TxtCambio
+            // 
+            this.TxtCambio.Location = new System.Drawing.Point(430, 534);
+            this.TxtCambio.Name = "TxtCambio";
+            this.TxtCambio.Size = new System.Drawing.Size(73, 20);
+            this.TxtCambio.TabIndex = 47;
+            // 
             // FormVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(767, 660);
+            this.ClientSize = new System.Drawing.Size(767, 596);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.LblTotal);
+            this.Controls.Add(this.TxtEfectivo);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.LblIva);
-            this.Controls.Add(this.LblDescuento);
+            this.Controls.Add(this.TxtCambio);
             this.Controls.Add(this.LblTotalneto);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnCerrar);
@@ -561,15 +581,17 @@
         private System.Windows.Forms.TextBox TxtDescuento;
         public System.Windows.Forms.TextBox TxtProducto;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label LblTotalneto;
-        private System.Windows.Forms.Label LblDescuento;
         private System.Windows.Forms.Label LblIva;
         private System.Windows.Forms.Label LblTotal;
         private System.Windows.Forms.ComboBox ddlVendedor;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox ddlCliente;
+        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox TxtEfectivo;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox TxtCambio;
     }
 }
