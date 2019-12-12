@@ -20,8 +20,11 @@ namespace CapaPresentacion
     public partial class GredProductos : Form
     {
 
+        public delegate void Datos(int Codigo, string Nombre, double Precio, int Existencia);
+
+        public event Datos MisDatos;
         private readonly CN_Ventas CNventas = new CN_Ventas();
-        private FormVentas FVentas = new FormVentas();
+        //private FormVentas FVentas = new FormVentas();
 
         public GredProductos()
         {
@@ -58,22 +61,22 @@ namespace CapaPresentacion
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
 
-            if (dgvDatos.SelectedRows.Count > 0)
-            {
-                FormVentas ventas = new FormVentas();
+            //if (dgvDatos.SelectedRows.Count > 0)
+            //{
+            //    FormVentas ventas = new FormVentas();
                 
-                ventas.TxtId.Text = this.dgvDatos.CurrentRow.Cells["ColumnId"].ToString();
-                ventas.TxtProducto.Text = this.dgvDatos.CurrentRow.Cells["columnProducto"].Value.ToString();
-                ventas.TxtExistencia.Text = this.dgvDatos.CurrentRow.Cells["columnExistencia"].Value.ToString();
-                ventas.TxtPrecio.Text = this.dgvDatos.CurrentRow.Cells["columnPrecioventa"].Value.ToString();
-                ventas.Show();
-                 Close();
+            //    ventas.TxtId.Text = this.dgvDatos.CurrentRow.Cells["ColumnId"].ToString();
+            //    ventas.TxtProducto.Text = this.dgvDatos.CurrentRow.Cells["columnProducto"].Value.ToString();
+            //    ventas.TxtExistencia.Text = this.dgvDatos.CurrentRow.Cells["columnExistencia"].Value.ToString();
+            //    ventas.TxtPrecio.Text = this.dgvDatos.CurrentRow.Cells["columnPrecioventa"].Value.ToString();
+            //    ventas.Show();
+            //     Close();
                 
-            }
-            else
-            {
-                MessageBox.Show("Seleccione una fila para Editar");
-            }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Seleccione una fila para Editar");
+            //}
 
 
             
@@ -82,6 +85,13 @@ namespace CapaPresentacion
 
 
 
+        }
+
+        private void dgvDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = dgvDatos.CurrentRow.Index;
+            this.MisDatos(Convert.ToInt32(dgvDatos[0, indice].Value.ToString()), dgvDatos[1, indice].Value.ToString(), Convert.ToDouble(dgvDatos[3, indice].Value.ToString()), Convert.ToInt32(dgvDatos[2, indice].Value.ToString()));
+            this.Close();
         }
     }
 }

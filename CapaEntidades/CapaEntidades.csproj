@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CE_Categoria.cs" />
+    <Compile Include="CE_Cliente.cs" />
     <Compile Include="CE_Producto.cs" />
     <Compile Include="CE_Proveedor.cs" />
     <Compile Include="CE_Vendedor.cs" />

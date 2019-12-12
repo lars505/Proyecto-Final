@@ -20,6 +20,7 @@ namespace CapaPresentacion
         private readonly CN_Vendedor CNvendedor = new CN_Vendedor();
         
         
+        
 
 
 
@@ -43,13 +44,25 @@ namespace CapaPresentacion
             
         }
 
+        void PonerDatos(int Codigo, string Nombre, double Precio, int Existencia)
+        {
+            TxtDescuento.Text = "0";
+            this.TxtId.Text = Convert.ToInt32(Codigo).ToString();
+            this.TxtProducto.Text = Nombre;
+            this.TxtPrecio.Text = Convert.ToDouble(Precio).ToString();
+            this.TxtExistencia.Text = Convert.ToInt32(Existencia).ToString();
+            this.TxtCantidad.Focus();
+            //codbodega = CodBodega;
+        }
+
+
+
         private void BrnAprod_Click_1(object sender, EventArgs e)
         {
-            GredProductos nuevo = new GredProductos();
+            GredProductos FrmLP = new GredProductos();
 
-            nuevo.Show();
-            //GredProductos.Select();
-            
+            FrmLP.MisDatos += new GredProductos.Datos(PonerDatos);
+            FrmLP.Show();
 
         }
 
