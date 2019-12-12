@@ -67,6 +67,23 @@ namespace CapaPresentacion
 
         }
 
+        private void TxtCantidad_TextChanged_1(object sender, EventArgs e)
+        {
+            if (TxtExistencia.Text == "" || TxtCantidad.Text == "")
+            {
+                return;
+            }
+            TxtTotal.Text = Convert.ToString(Convert.ToDouble(TxtCantidad.Text) * Convert.ToDouble(TxtPrecio.Text));
+
+            if (Convert.ToInt32(TxtDescuento.Text) != 0)
+            {
+                TxtTotal.Text = ((Convert.ToDouble(TxtCantidad.Text) * Convert.ToDouble(TxtPrecio.Text)) - ((Convert.ToDouble(TxtCantidad.Text) * Convert.ToDouble(TxtPrecio.Text)) * (Convert.ToDouble(TxtDescuento.Text) / 100))).ToString();
+            }
+        }
+
+
+        
+
         private void LLenarComboVendedor()
         {
             List<CE_Vendedor> proveedor = CNvendedor.Todos();
@@ -258,6 +275,12 @@ namespace CapaPresentacion
             // double Cambio = totalneto - Convert.ToInt32(TxtEfectivo.Text);
 
             //TxtCambio.Text = Convert.ToString(Cambio);
+        }
+
+        private void TxtCantidad_TextChanged(object sender, EventArgs e)
+        {
+
+
         }
     }
 }
