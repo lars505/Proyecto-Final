@@ -77,7 +77,7 @@ namespace CapaPresentacion
 
             if (Convert.ToInt32(TxtDescuento.Text) != 0)
             {
-                TxtTotal.Text = ((Convert.ToDouble(TxtCantidad.Text) * Convert.ToDouble(TxtPrecio.Text)) - ((Convert.ToDouble(TxtCantidad.Text) * Convert.ToDouble(TxtPrecio.Text)) * (Convert.ToDouble(TxtDescuento.Text) / 100))).ToString();
+                TxtTotal.Text = ((Convert.ToDouble(TxtCantidad.Text) * Convert.ToDouble(TxtPrecio.Text)) - (Convert.ToDouble(TxtDescuento.Text))).ToString();
             }
         }
 
@@ -92,6 +92,7 @@ namespace CapaPresentacion
             {
                 ddlVendedor.DataSource = proveedor;
                 ddlVendedor.DisplayMember = "nombre";
+                
                 ddlVendedor.ValueMember = "id";
             }
             else
@@ -182,7 +183,7 @@ namespace CapaPresentacion
             {
                 totalneto += Convert.ToDouble(fila.Cells[5].Value);
             }
-            LblTotalneto.Text = "C$" + totalneto.ToString();
+            TxtSubtotal.Text = totalneto.ToString();
 
 
         }
@@ -193,7 +194,7 @@ namespace CapaPresentacion
             if (cont_fila > 0)
             {
                 totalneto = totalneto - (Convert.ToDouble(dgvDatos.Rows[dgvDatos.CurrentRow.Index].Cells[5].Value));
-                LblTotalneto.Text = "C$" + totalneto.ToString();
+                TxtSubtotal.Text = totalneto.ToString();
                 dgvDatos.Rows.RemoveAt(dgvDatos.CurrentRow.Index);
                 cont_fila--;
             }
