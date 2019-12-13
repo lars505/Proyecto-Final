@@ -105,8 +105,11 @@ namespace CapaPresentacion
             nuevo.Show();
         }
 
-        
-
-
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCliente nuevo = new FormCliente();
+            nuevo.MdiParent = this;
+            nuevo.Show();
+        }
     }
 }
