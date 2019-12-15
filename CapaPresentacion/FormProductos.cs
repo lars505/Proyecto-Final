@@ -116,7 +116,7 @@ namespace CapaPresentacion
                     }
                     else
                     {
-                        MessageBox.Show("Producto registrado/actualizado con éxito");
+                        MessageBox.Show("Producto actualizado con éxito");
 
                         TraerTodos();
                     }
@@ -149,12 +149,14 @@ namespace CapaPresentacion
                 dgvDatos.Columns["columnProveedor"].DataPropertyName = "nombreprov";
                 dgvDatos.Columns["columnIdproveedor"].DataPropertyName = "idproveedor";
             }
-            else
+            else { 
                 MessageBox.Show("No existen producto Registrado");
+                
+            }
         }
 
 
-        private void LLenarComboCategoria()
+        public void LLenarComboCategoria()
         {
             List<CE_Categoria> categorias = CNcategoria.Todos();
 

@@ -164,6 +164,7 @@ namespace CapaPresentacion
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
+            
             Guardar();
             TraerTodos();
             txtid.Text = "";

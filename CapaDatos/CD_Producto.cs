@@ -69,7 +69,7 @@ namespace CapaDatos
                 cnx.Open();
 
                 //const string sqlQuery = "select productos.id_productos,productos.nombreproducto, productos.Descripcion,productos.estado,productos.id_categoria,productos.id_proveedor, categorias.id_categoria,categorias.nombre,proveedores.id_proveedor from productos inner join categorias on productos.id_categoria = categorias.id_categoria Order by productos.id_productos";
-                const string sqlQuery = "SELECT productos.id_productos, productos.nombreproducto, productos.Descripcion, productos.estado, productos.id_categoria, productos.Id_proveedor, categorias.nombre as nombrecat, proveedores.nombre as nombreprov FROM categorias INNER JOIN productos ON categorias.id_categoria = productos.id_categoria INNER JOIN proveedores ON productos.Id_proveedor = proveedores.id_proveedor";
+                const string sqlQuery = "SELECT productos.id_productos, productos.nombreproducto, productos.Descripcion, productos.estado, productos.id_categoria, productos.Id_proveedor, categorias.nombre as nombrecat, proveedores.nombre as nombreprov FROM categorias INNER JOIN productos ON categorias.id_categoria = productos.id_categoria INNER JOIN proveedores ON productos.Id_proveedor = proveedores.id_proveedor where productos.estado = 'Disponible'";
                 using (SqlCommand cmd = new SqlCommand(sqlQuery, cnx))
                 {
                     SqlDataReader dataReader = cmd.ExecuteReader();

@@ -164,6 +164,7 @@
             // 
             // dgvDatos
             // 
+            this.dgvDatos.AllowUserToAddRows = false;
             this.dgvDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -177,6 +178,7 @@
             this.ColumnIdcategoria});
             this.dgvDatos.Location = new System.Drawing.Point(15, 221);
             this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersVisible = false;
             this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDatos.Size = new System.Drawing.Size(710, 268);
@@ -186,43 +188,51 @@
             // 
             this.ColumnId.HeaderText = "Codigo";
             this.ColumnId.Name = "ColumnId";
+            this.ColumnId.ReadOnly = true;
             // 
             // ColumnProducto
             // 
             this.ColumnProducto.HeaderText = "Producto";
             this.ColumnProducto.Name = "ColumnProducto";
+            this.ColumnProducto.ReadOnly = true;
             // 
             // ColumnDescripcion
             // 
             this.ColumnDescripcion.HeaderText = "Descripcion";
             this.ColumnDescripcion.Name = "ColumnDescripcion";
+            this.ColumnDescripcion.ReadOnly = true;
             // 
             // ColumnEstado
             // 
             this.ColumnEstado.HeaderText = "Estado";
             this.ColumnEstado.Name = "ColumnEstado";
+            this.ColumnEstado.ReadOnly = true;
             this.ColumnEstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // ColumnProveedor
             // 
             this.ColumnProveedor.HeaderText = "Proveedor";
             this.ColumnProveedor.Name = "ColumnProveedor";
+            this.ColumnProveedor.ReadOnly = true;
             // 
             // ColumnCategoria
             // 
             this.ColumnCategoria.HeaderText = "Categoria";
             this.ColumnCategoria.Name = "ColumnCategoria";
+            this.ColumnCategoria.ReadOnly = true;
             // 
             // ColumnIdproveedor
             // 
             this.ColumnIdproveedor.HeaderText = "Idproveedor";
             this.ColumnIdproveedor.Name = "ColumnIdproveedor";
+            this.ColumnIdproveedor.ReadOnly = true;
             this.ColumnIdproveedor.Visible = false;
             // 
             // ColumnIdcategoria
             // 
             this.ColumnIdcategoria.HeaderText = "Idcategoria";
             this.ColumnIdcategoria.Name = "ColumnIdcategoria";
+            this.ColumnIdcategoria.ReadOnly = true;
             this.ColumnIdcategoria.Visible = false;
             // 
             // BtnNuevo
@@ -324,7 +334,7 @@
             this.groupBox1.Size = new System.Drawing.Size(477, 158);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Datos";
             // 
             // button2
             // 
@@ -381,12 +391,10 @@
         private System.Windows.Forms.TextBox TxtDescripcion;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox ddlCategoria;
         private System.Windows.Forms.CheckBox CkEstado;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox PBImagen;
-        private System.Windows.Forms.DataGridView dgvDatos;
         private System.Windows.Forms.Button BtnNuevo;
         private System.Windows.Forms.Button BtnAgreagr;
         private System.Windows.Forms.Button BtnEditar;
@@ -406,5 +414,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIdproveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIdcategoria;
+        private System.Windows.Forms.DataGridView dgvDatos;
+        public System.Windows.Forms.ComboBox ddlCategoria;
     }
 }
